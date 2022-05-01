@@ -9,7 +9,7 @@ class APIController extends Controller
 {
     function hello() {
         return response()->json([
-            'message' => 'Chào cậu!'
+            'message' => 'Hi, From Papazola with Sucks!'
         ]);
     }
 }
