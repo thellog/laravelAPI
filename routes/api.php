@@ -27,8 +27,7 @@ Route::prefix('user')->group(function(){
     Route::post('register', [AuthController::class, 'register']);
     Route::get('logout', [AuthController::class, 'logout']);
 
-    // This route requires users loggin to use
-    Route::middleware(['auth'])->group(function() {
-        Route::post('upload', [MediaController::class, 'upload']);
-    });
+    
 });
+
+Route::post('upload', [MediaController::class, 'upload']);

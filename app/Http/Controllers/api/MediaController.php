@@ -14,5 +14,12 @@ class MediaController extends Controller
     {
         $this->mediaService = $mediaService;
     }
-    
+    public function upload(Request $request) {
+        $res = $this->mediaService->uploadImg($request);
+        if ($res == true) {
+            return response()->json([
+                'data' => $res
+            ]);
+        }
+    }
 }

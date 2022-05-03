@@ -39,6 +39,13 @@
             <center>
                 <h1 style="color: #fff">Welcome!</h1>
             </center>
+
+            <form method="POST" enctype="multipart/form-data" action="api/upload">
+                @csrf
+                <input type="text" name="id">
+                <input type="file" name="avatar">
+                <button>Upload</button>
+            </form>
         </div>
     </body>
 </html>
