@@ -14,7 +14,8 @@ class AddUserAvatarAtt extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('avatar')->after('name');
+            $table->string('public_id')->after('name')->nullable();
+            $table->string('avatar_url')->after('public_id')->nullable();
         });
     }
 
@@ -26,7 +27,8 @@ class AddUserAvatarAtt extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('avatar');
+            $table->dropColumn('public_id');
+            $table->dropColumn('avatar_url');
         });
     }
 }

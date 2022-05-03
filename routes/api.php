@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\APIController;
 use App\Http\Controllers\api\AuthController;
+use App\Http\Controllers\api\MediaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
@@ -25,4 +26,9 @@ Route::prefix('user')->group(function(){
     Route::post('login', [AuthController::class, 'login']);
     Route::post('register', [AuthController::class, 'register']);
     Route::get('logout', [AuthController::class, 'logout']);
+
+    // This route requires users loggin to use
+    Route::middleware(['auth'])->group(function() {
+        Route::post('upload', [MediaController::class, 'upload']);
+    });
 });

@@ -35,7 +35,7 @@ class AuthService {
 
             return $this->login($request);
         }catch(Exception $e) {
-            return false;
+            return $e->getMessage();
         }
     }
 
@@ -48,7 +48,7 @@ class AuthService {
 
             return $data;
         }catch(Exception $e){
-            return false;
+            return $e->getMessage();
         }
     }
 }

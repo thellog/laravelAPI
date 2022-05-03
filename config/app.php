@@ -161,7 +161,12 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
+        // Authentication API token
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        
+        // For uploading image to the clouder
+
 
         /*
          * Package Service Providers...
