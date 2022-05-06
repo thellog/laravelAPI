@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\APIController;
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\MediaController;
+use App\Http\Controllers\api\YouTubeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
@@ -31,3 +32,6 @@ Route::prefix('user')->group(function(){
 });
 
 Route::post('upload', [MediaController::class, 'upload']);
+
+
+Route::get('getVideoLists',[YouTubeController::class,'getVideoLists']);
