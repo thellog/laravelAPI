@@ -33,7 +33,7 @@ return [
     'youtube' => [
         'api_key' => env('API_KEY'),
         'search_endpoint' => env('SEARCH_ENDPOINT'),
-        'channel' => env('YOUTUBE_ID')
+        'channel_id' => env('YOUTUBE_ID')
     ]
 
 ];

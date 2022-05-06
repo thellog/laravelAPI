@@ -35,3 +35,4 @@ Route::post('upload', [MediaController::class, 'upload']);
 
 
 Route::get('getVideoLists',[YouTubeController::class,'getVideoLists']);
+Route::get('/video/{id}',[YouTubeController::class, 'getSingleVideo']);
