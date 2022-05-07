@@ -3,48 +3,37 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\YoutubeService;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
 class YouTubeController extends Controller
 {
+    protected $youtubeService;
+
+    public function __construct(YoutubeService $youtubeService)
+    {
+        $this->youtubeService = $youtubeService;
+    }
+    
     public function getVideoLists() {
 
-        $part = 'snippet';
-        $youTubeEndPoint = \config('services.youtube.search_endpoint');
-        $apiKey = \config('services.youtube.api_key');
-        $channelId = \config('services.youtube.channel_id');
-
-
-        $url = "$youTubeEndPoint?key= $apiKey&channelId=$channelId&part= $part,id&order=date";
-
-        $response = Http::get($url);
-        $results = json_decode($response);
-
-        return $response->body();
+        return $this->youtubeService->getVideoLists();
+       
     }
 
     public function getSingleVideo($id) {
-        $part = 'snippet';
-        $apiKey = \config('services.youtube.api_key');
-       
-
-        $url = "https://www.googleapis.com/youtube/v3/videos?part=$part&id=$id&key=$apiKey";
-        $response  = Http::get($url);
-         return $response->body();
+      
+         return $this->youtubeService->getSingleVideo($id);
     }
 
     public function getVideoByCategory($categoryId)
     {
-        $youTubeEndPoint = \config('services.youtube.search_endpoint');
-        $part = 'snippet';
-        $apiKey = \config('services.youtube.api_key');
-        $channelId = \config('services.youtube.channel_id');
-        $url = " $youTubeEndPoint?part=$part&type=video&videoCategoryId=$categoryId&key= $apiKey&channelId=$channelId";
+       
 
-        $response = Http::get($url);
-
-        return $response->body();
+        return $this->youtubeService->getVideoByCategory($categoryId);
 
     }
+    
+
 }
