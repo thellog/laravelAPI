@@ -34,5 +34,7 @@ Route::prefix('user')->group(function(){
 Route::post('upload', [MediaController::class, 'upload']);
 
 
-Route::get('getVideoLists',[YouTubeController::class,'getVideoLists']);
-Route::get('/video/{id}',[YouTubeController::class, 'getSingleVideo']);
+Route::prefix('v1')->group(function() {
+    Route::get('videos',[YouTubeController::class,'getVideoLists']);
+    Route::get('/videos/{id}',[YouTubeController::class, 'getSingleVideo']);
+});
