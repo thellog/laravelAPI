@@ -23,4 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/',[App\Http\Controllers\YouTubeController::class,'index'])->name('index');
+Route::get('/results',[App\Http\Controllers\YouTubeController::class,'results'])->name('results');
+Route::get('/watch/{id}',[App\Http\Controllers\YouTubeController::class,'watch'])->name('watch');
