@@ -27,8 +27,6 @@ Route::prefix('user')->group(function(){
     Route::post('login', [AuthController::class, 'login']);
     Route::post('register', [AuthController::class, 'register']);
     Route::get('logout', [AuthController::class, 'logout']);
-
-    
 });
 
 Route::post('upload', [MediaController::class, 'upload']);
