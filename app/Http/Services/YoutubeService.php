@@ -11,7 +11,7 @@ class YoutubeService {
         $youTubeEndPoint = \config('services.youtube.search_endpoint');
         $apiKey = \config('services.youtube.api_key');
         $channelId = \config('services.youtube.channel_id');
-        $maxResults = 50;
+        $maxResults = 6;
 
         $url = "$youTubeEndPoint?key= $apiKey&maxResults=$maxResults&channelId=$channelId&part= $part,id&order=date";
 
