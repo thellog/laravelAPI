@@ -23,15 +23,18 @@ Route::get('hello', [APIController::class, 'hello']);
 
 // Make a route group for user authentication
 
-Route::prefix('user')->group(function(){
-    Route::post('login', [AuthController::class, 'login']);
-    Route::post('register', [AuthController::class, 'register']);
-    Route::get('logout', [AuthController::class, 'logout']);
-
-    
+// Route::prefix('user')->group(function(){
+//     Route::post('login', [AuthController::class, 'login']);
+//     Route::post('register', [AuthController::class, 'register']);
+//     Route::get('logout', [AuthController::class, 'logout']);
+// });
+Route::post('login','UserController@login');
+Route::post('register','UserController@register');
+Route::middleware(['auth:api'])->group(function(){
+    Route::get('user','UserController@index');
+    Route::post('logout','UserController@logout');
 });
 
-Route::post('upload', [MediaController::class, 'upload']);
 
 
 Route::prefix('v1')->group(function() {
