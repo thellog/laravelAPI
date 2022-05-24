@@ -7,7 +7,7 @@ use App\Http\Services\YoutubeService;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 
-class YouTubeController extends Controller
+class APIYouTubeController extends Controller
 {
     protected $youtubeService;
 
