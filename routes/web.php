@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NavigationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,3 +25,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('sign_in', [NavigationController::class, 'sign_in'])->name('sign_in');
+Route::get('sign_up', [NavigationController::class, 'sign_up'])->name('sign_up');

@@ -84,6 +84,7 @@
                     </div>
                     <div class="card-body">
                         <form role="form text-left">
+                            @csrf
                             <div class="mb-3">
                                 <input type="text" class="form-control" placeholder="Name" aria-label="Name"
                                     aria-describedby="email-addon">
