@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NavigationController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('sign_in', [NavigationController::class, 'sign_in'])->name('sign_in');
+Route::post('login', [AuthController::class, 'checkLogin'])->name('login');
 Route::get('sign_up', [NavigationController::class, 'sign_up'])->name('sign_up');
 
 Route::get('/',[App\Http\Controllers\YouTubeController::class,'index'])->name('index');
