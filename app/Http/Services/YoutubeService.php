@@ -13,7 +13,8 @@ class YoutubeService {
         $channelId = \config('services.youtube.channel_id');
         $maxResults = 6;
 
-        $url = "$youTubeEndPoint?key= $apiKey&maxResults=$maxResults&channelId=$channelId&part= $part,id&order=date";
+
+        $url = "$youTubeEndPoint?key= $apiKey&channelId=$channelId&part= $part,id&order=date";
 
         $response = Http::get($url);
         $results = json_decode($response);
@@ -28,8 +29,7 @@ class YoutubeService {
 
         $url = "https://www.googleapis.com/youtube/v3/videos?part=$part&id=$id&key=$apiKey";
         $response  = Http::get($url);
-        $results = json_decode($response);
-         return $results;
+         return $response->body();
     }
 
     public function getVideoByCategory($categoryId)
