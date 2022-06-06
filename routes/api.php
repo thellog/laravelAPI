@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\api\APIController;
+use App\Http\Controllers\api\APIYoutubeController;
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\MediaController;
-use App\Http\Controllers\api\YouTubeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PHPUnit\TextUI\XmlConfiguration\Group;
@@ -37,7 +37,8 @@ Route::middleware(['auth:api'])->group(function(){
 
 
 
+
 Route::prefix('v1')->group(function() {
-    Route::get('videos',[YouTubeController::class,'getVideoLists']);
-    Route::get('/videos/{id}',[YouTubeController::class, 'getSingleVideo']);
+    Route::get('videos',[APIYoutubeController::class,'getVideoLists']);
+    Route::get('/videos/{id}',[APIYoutubeController::class, 'getSingleVideo']);
 });

@@ -26,6 +26,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Rocketlabs\\Helpers\\App\\": "src/app/",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
