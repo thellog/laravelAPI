@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
-class YouTubeController extends Controller
+class YoutubeController extends Controller
 {
 
     protected $youtubeService;

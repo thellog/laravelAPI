@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\api\APIController;
-use App\Http\Controllers\api\APIYouTubeController;
+use App\Http\Controllers\api\APIYoutubeController;
 use App\Http\Controllers\api\AuthController;
 use App\Http\Controllers\api\MediaController;
 use Illuminate\Http\Request;
@@ -33,6 +33,6 @@ Route::post('upload', [MediaController::class, 'upload']);
 
 
 Route::prefix('v1')->group(function() {
-    Route::get('videos',[APIYouTubeController::class,'getVideoLists']);
-    Route::get('/videos/{id}',[APIYouTubeController::class, 'getSingleVideo']);
+    Route::get('videos',[APIYoutubeController::class,'getVideoLists']);
+    Route::get('/videos/{id}',[APIYoutubeController::class, 'getSingleVideo']);
 });
