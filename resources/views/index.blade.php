@@ -6,7 +6,7 @@
             @foreach($videoLists->items as $key => $item)
                 <div class="col-4">
                         <div class="card mb-4">
-                        <a href="{{ route('watch', $item->id->videoId) }}">
+                        {{-- <a href="{{ route('watch', $item->id->videoId) }}"> --}}
                             <img src="{{ $item->snippet->thumbnails->medium->url }}" class="img-fluid" alt="">
                             <div class="card-body">
                                 <h5 class="card-titled">{{ \Illuminate\Support\Str::limit($item->snippet->title, $limit = 50, $end = ' ...') }}</h5>

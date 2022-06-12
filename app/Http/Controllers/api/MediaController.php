@@ -14,6 +14,11 @@ class MediaController extends Controller
     {
         $this->mediaService = $mediaService;
     }
+
+    public function upload_image() {
+        return view('layouts.upload');
+    }
+    
     public function upload(Request $request) {
         $res = $this->mediaService->uploadImg($request);
         if ($res == true) {

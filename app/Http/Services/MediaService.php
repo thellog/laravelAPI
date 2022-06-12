@@ -8,7 +8,7 @@ use Exception;
 
 class MediaService {
     public function uploadImg($request) {
-        $data = Cloudinary::uploadApi()->upload($request->file('avatar')->getRealPath(), [
+        $data = Cloudinary::uploadApi()->upload($request->file('file')->getRealPath(), [
             'folder' => 'learning_app_image',
             'transformation' => [
                       'width' => 150,

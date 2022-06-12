@@ -28,6 +28,7 @@ Route::get('hello', [APIController::class, 'hello']);
 //     Route::post('register', [AuthController::class, 'register']);
 //     Route::get('logout', [AuthController::class, 'logout']);
 // });
+
 Route::post('login','UserController@login');
 Route::post('register','UserController@register');
 Route::middleware(['auth:api'])->group(function(){
